@@ -1,12 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+// 防重入攻击
+// 多签
 
 /**
  * @dev 核心合约
  */
-contract PledgePool {
+contract PledgePool is R {
 
     // struct
     /*借款人Lend*/
@@ -27,12 +28,18 @@ contract PledgePool {
     // 多签
     // uniswap
 
-    /**小结*/
-    // * 理解质押与借贷组合的业务
-    // * 使用多签
-    // * 使用uniswap获取实时代币之间的交换率（汇率）
+    /** 理解这两个实体的作用
+    IUniswapV2Router02 IUniswap = IUniswapV2Router02(_swapRouter);
 
-    constructor(){
+    IBscPledgeOracle public oracle;
+    oracle = IBscPledgeOracle(_oracle);
+    */
+    constructor(
+        address _oracle,
+        address _swapRouter,
+        address payable _feeAddress,
+        address _multiSignature
+    ){
 
     }
 }
