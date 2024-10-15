@@ -1,13 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// 防重入攻击
+import {MultiSigWallet} from "../multiSignature/v1/MultiSigWallet.sol";
+import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+
 // 多签
+// 防重入攻击
 
 /**
  * @dev 核心合约
  */
-contract PledgePool is R {
+contract PledgePool is ReentrancyGuard, MultiSigWallet {
 
     // struct
     /*借款人Lend*/
