@@ -13,6 +13,14 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 contract PledgePool is ReentrancyGuard, MultiSigWallet {
 
     // struct
+    /*池*/
+    // 每个池的基本信息
+    struct PoolBaseInfo {
+        uint256 settleTime;
+        uint256 endTime;
+        uint256 interestRate;
+        uint256 maxSupply;
+    }
     /*借款人Lend*/
     /*贷款人Borrow*/
 
