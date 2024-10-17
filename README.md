@@ -25,6 +25,17 @@
 * 清算（前提：达到清算阈值）
 * 结束
 
+### 4. 零散知识点
+4.1 为什么借款贷款获取 池基本信息和数据信息时，使用storage
+```solidity
+        PoolBaseInfo storage pool = poolBaseInfo[_pid];
+        PoolDataInfo storage data = poolDataInfo[_pid];
+```
+> 1. 合约的状态白能量，必须使用storage让其在合约的生命周期中持久化。
+> 2. 节省gas（大结构体改变其中的数据）
+ 
+
+
 # 小结（v1版本）
 1. 理解质押与借贷组合的DeFi业务
 2. 使用多签
