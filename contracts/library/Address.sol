@@ -184,6 +184,7 @@ library Address {
             } else {
                 revert(errorMessage);
             }
+            return ""; // todo
         }
     }
 }
